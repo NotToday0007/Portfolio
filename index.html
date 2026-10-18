@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Md. Arif Hasan Rifat | SQA Engineer</title>
+<meta name="description" content="Md. Arif Hasan Rifat, SQA Engineer at Shikho. CRM testing, Playwright automation, API testing, and QA tools.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{--bg:#EEF1F7;--panel:#fff;--ink:#121A36;--soft:#5A6486;--line:#D9DEEB;--brand:#6D4AFF;--pass:#12A06A;--term:#141B3A;--glow:rgba(109,74,255,.13)}
+[data-theme=dark]{--bg:#0E1328;--panel:#171E3D;--ink:#EDF0FF;--soft:#9AA4CF;--line:#27305A;--brand:#8F73FF;--glow:rgba(143,115,255,.16)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:17px/1.65 Figtree,system-ui,sans-serif;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(520px circle at var(--mx,50%) var(--my,30%),var(--glow),transparent 70%)}
+main,nav,footer{position:relative;z-index:1}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;line-height:1.08;letter-spacing:-.02em}
+#bar{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--brand);transform-origin:0 50%;transform:scaleX(0);z-index:20}
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:64px;gap:16px}
+nav b{font:800 20px 'Bricolage Grotesque'}
+nav ul{display:flex;gap:6px;list-style:none;padding:0;font-size:15px;font-weight:500}
+nav ul a{text-decoration:none;color:var(--soft);padding:7px 14px;border-radius:999px;transition:.2s}
+nav ul a:hover,nav ul a.act{color:var(--ink);background:var(--panel)}
+.tools{display:flex;gap:10px;align-items:center}
+#theme{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer;font-size:17px}
+.btn{display:inline-block;padding:12px 22px;border-radius:999px;font:600 15px Figtree;text-decoration:none;cursor:pointer;border:1.5px solid transparent;transition:transform .12s,box-shadow .2s;will-change:transform}
+.btn.p{background:var(--brand);color:#fff}
+.btn.p:hover{box-shadow:0 10px 28px -8px var(--brand)}
+.btn.s{border-color:currentColor;background:transparent;color:inherit}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:70px 0 60px}
+.hero h1{font-size:clamp(42px,6.4vw,78px);font-weight:800}
+.hero .lead{font-size:19px;color:var(--soft);margin:22px 0 28px;max-width:31em}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.live{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;background:var(--panel);border:1px solid var(--line);padding:6px 14px;border-radius:999px;margin-bottom:22px;color:var(--soft)}
+.live i{width:9px;height:9px;border-radius:50%;background:var(--pass);animation:pulse 1.8s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(18,160,106,.6)}100%{box-shadow:0 0 0 10px rgba(18,160,106,0)}}
+.stage{position:relative;perspective:900px;max-width:420px;margin-left:auto}
+.photo{border-radius:28px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 40px 70px -30px rgba(18,26,54,.55);transition:transform .15s;transform-style:preserve-3d;border:4px solid var(--panel)}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.chip{position:absolute;background:var(--panel);border:1px solid var(--line);padding:8px 14px;border-radius:14px;font-size:14px;font-weight:600;box-shadow:0 14px 30px -14px rgba(18,26,54,.45);white-space:nowrap;animation:float 5s ease-in-out infinite}
+.chip b{color:var(--pass)}
+.c1{left:-42px;top:12%}
+.c2{right:-26px;top:46%;animation-delay:-1.6s}
+.c3{left:-26px;bottom:8%;animation-delay:-3s}
+@keyframes float{50%{transform:translateY(-10px)}}
+
+/* Terminal */
+.termwrap{padding:10px 0 70px}
+.term{background:var(--term);color:#dfe4ff;border-radius:20px;font:14.5px/1.95 'JetBrains Mono',monospace;box-shadow:0 30px 60px -28px rgba(20,27,58,.6);overflow:hidden;border:1px solid #2a3470}
+.term header{display:flex;align-items:center;gap:7px;padding:13px 18px;background:#1C2550}
+.term header i{width:11px;height:11px;border-radius:50%;background:#46528f}
+.term header span{margin-left:10px;color:#8A94C8;font-size:12.5px;flex:1}
+.term header button{background:#2b3777;color:#dfe4ff;border:0;border-radius:8px;padding:4px 12px;font:12.5px 'JetBrains Mono';cursor:pointer}
+.term header button:hover{background:var(--brand)}
+.tb{padding:16px 22px;min-height:290px}
+.ln{display:flex;justify-content:space-between;gap:12px;animation:in .25s both}
+@keyframes in{from{opacity:0;transform:translateX(-6px)}}
+.ok{color:#3FE0A0}
+.dim{color:#8A94C8}
+.sum{margin-top:10px;padding-top:10px;border-top:1px dashed #3a4580;color:#fff}
+.cur::after{content:"▋";animation:blink 1s steps(1) infinite;color:#8A94C8}
+@keyframes blink{50%{opacity:0}}
+
+/* Sections */
+section{padding:76px 0;border-top:1px solid var(--line)}
+h2.t{font-size:clamp(32px,4.5vw,48px);margin-bottom:12px}
+.sub{color:var(--soft);max-width:36em;margin-bottom:38px}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+.rv.in{opacity:1;transform:none}
+
+/* Projects */
+.rows{border-top:2px solid var(--ink)}
+.row{border-bottom:1px solid var(--line)}
+.row>button{all:unset;box-sizing:border-box;width:100%;display:grid;grid-template-columns:150px 1fr 40px;gap:24px;padding:26px 8px;cursor:pointer;align-items:start;transition:background .2s,padding .2s}
+.row>button:hover{background:var(--panel);padding-left:20px}
+.row .n{font:800 48px/1 'Bricolage Grotesque';color:var(--brand)}
+.row .n small{font:500 14px Figtree;display:block;color:var(--soft);margin-top:6px}
+.row h3{font-size:23px;margin-bottom:4px}
+.row p{color:var(--soft)}
+.row .pl{font:300 34px/1 Figtree;color:var(--soft);transition:transform .3s;text-align:center}
+.row.open .pl{transform:rotate(45deg);color:var(--brand)}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.tags span{font-size:13px;font-weight:500;background:var(--panel);border:1px solid var(--line);padding:3px 12px;border-radius:999px}
+.log{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s}
+.row.open .log{grid-template-rows:1fr}
+.log>div{overflow:hidden}
+.log .term{margin:0 8px 26px;font-size:13.5px}
+.log .tb{min-height:0;padding:14px 20px}
+
+/* Experience */
+.tl{position:relative;margin-left:8px;padding-left:36px}
+.tl::before,.tl i.fill{content:"";position:absolute;left:0;top:8px;bottom:30px;width:2px;background:var(--line)}
+.tl i.fill{background:var(--brand);bottom:auto;height:calc(var(--p,0)*1%);transition:height .15s}
+.job{position:relative;padding:0 0 40px;opacity:.35;transition:opacity .5s}
+.job.on{opacity:1}
+.job::before{content:"";position:absolute;left:-46px;top:3px;width:22px;height:22px;border-radius:50%;background:var(--bg);border:3px solid var(--line);transition:.4s;display:grid;place-items:center}
+.job.on::before{content:"✓";border-color:var(--pass);background:var(--pass);color:#fff;font:700 12px/16px Figtree;text-align:center}
+.job .d{font-size:14px;color:var(--soft);font-weight:500}
+.job h3{font-size:22px;margin:2px 0 8px}
+.job li{color:var(--soft);margin:0 0 6px 18px}
+.badge{display:inline-block;font-size:12px;font-weight:600;background:rgba(18,160,106,.15);color:var(--pass);padding:2px 10px;border-radius:999px;margin-left:8px;vertical-align:middle}
+
+/* Skills */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+.tabs button{border:1.5px solid var(--line);background:var(--panel);color:var(--ink);padding:9px 18px;border-radius:999px;font:600 15px Figtree;cursor:pointer;transition:.2s}
+.tabs button:hover{border-color:var(--brand)}
+.tabs button.on{background:var(--brand);border-color:var(--brand);color:#fff}
+.pool{display:flex;flex-wrap:wrap;gap:12px;min-height:120px;align-content:flex-start}
+.pool span{background:var(--panel);border:1px solid var(--line);padding:12px 20px;border-radius:14px;font-weight:600;animation:pop .45s both;transition:transform .2s,border-color .2s}
+.pool span:hover{transform:translateY(-4px) rotate(-1.5deg);border-color:var(--brand)}
+@keyframes pop{from{opacity:0;transform:scale(.7) translateY(12px)}}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:60px}
+.edu h3{margin-bottom:16px}
+.edu p{margin-bottom:16px}
+.edu small{color:var(--soft);display:block}
+
+/* Contact */
+.contact{background:var(--ink);color:var(--bg);border-radius:30px;padding:60px;margin:30px 0 70px;position:relative;overflow:hidden}
+.contact h2{font-size:clamp(34px,5vw,58px);margin-bottom:14px}
+.contact p{opacity:.75;margin-bottom:28px;max-width:30em}
+.contact .btn.p{background:var(--brand);color:#fff}
+.contact-details{display:flex;flex-wrap:wrap;gap:12px 24px;margin-top:28px;padding-top:22px;border-top:1px solid rgba(255,255,255,.2)}
+.contact-details a{color:var(--bg);text-decoration:none;font-weight:500;overflow-wrap:anywhere}
+.contact-details a:hover{color:#B9A9FF}
+.contact-details span{opacity:.8;margin-right:7px}
+.mail-line{display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap}
+.copy-btn{background:transparent;border:1px solid rgba(255,255,255,.35);color:var(--bg);border-radius:999px;padding:3px 14px;font:600 13px Figtree;cursor:pointer;transition:.2s}
+.copy-btn:hover{background:var(--brand);border-color:var(--brand);color:#fff}
+#toast{position:fixed;bottom:28px;left:50%;transform:translate(-50%,90px);background:var(--ink);color:var(--bg);padding:12px 22px;border-radius:999px;font-weight:600;transition:transform .35s;z-index:30}
+#toast.show{transform:translate(-50%,0)}
+footer{text-align:center;color:var(--soft);font-size:14px;padding-bottom:40px}
+
+@media(max-width:860px){
+ .hero,.two{grid-template-columns:1fr}
+ .stage{margin:0 auto}
+ .row>button{grid-template-columns:1fr 30px}
+ .row .n{grid-column:1/-1}
+ nav ul{display:none}
+ .contact{padding:36px 26px}
+ .c1{left:-8px}
+ .c2{right:-8px}
+ .c3{left:-8px}
+ .hero{padding-top:44px}
+}
+@media(max-width:480px){
+ .wrap{padding:0 18px}
+ .hero h1{font-size:42px}
+ .chip{font-size:12px;padding:7px 9px}
+ .term{font-size:12px}
+ .tb{padding:14px}
+ .contact-details{flex-direction:column;gap:12px}
+}
+@media(prefers-reduced-motion:reduce){
+ *{animation-duration:.01s!important;transition:none!important}
+ html{scroll-behavior:auto}
+ .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+
+<body>
+<div id="bar"></div>
+
+<nav>
+ <div class="wrap">
+  <b>Md. Arif Hasan Rifat</b>
+  <ul id="links">
+   <li><a href="#work">Projects</a></li>
+   <li><a href="#experience">Experience</a></li>
+   <li><a href="#skills">Skills</a></li>
+   <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="tools">
+   <button id="theme" aria-label="Switch light and dark theme">◐</button>
+   <a class="btn p" data-mag target="_blank" rel="noopener"
+      href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=rifatkhan.khan01@gmail.com&amp;su=Job%20Opportunity%20-%20SQA%20Engineer">Hire me</a>
+  </div>
+ </div>
+</nav>
+
+<main>
+<div class="wrap">
+
+ <div class="hero">
+  <div>
+   <div class="live"><i></i>Open to QA opportunities</div>
+   <h1>I test software, find bugs, and automate repetitive work.</h1>
+   <p class="lead">I'm Md. Arif Hasan Rifat, a Junior SQA Engineer at Shikho in Dhaka. I work on CRM and calling systems used by 350+ sales agents. I also write test cases and build automation to make testing easier.</p>
+   <div class="cta">
+    <a class="btn p" data-mag href="#work">View my projects</a>
+    <a class="btn s" data-mag href="assets/CV_of_Md_Arif_Hasan_Rifat.pdf" download>Download CV</a>
+   </div>
+  </div>
+
+  <div class="stage">
+   <div class="photo" id="photo">
+    <img src="assets/photo.png" alt="Md. Arif Hasan Rifat holding his thesis" width="800" height="1000">
+   </div>
+   <div class="chip c1"><b>✓</b> 350+ sales agents</div>
+   <div class="chip c2"><b>✓</b> QA and automation</div>
+   <div class="chip c3"><b>✓</b> Research project</div>
+  </div>
+ </div>
+
+ <div class="termwrap">
+  <div class="term" aria-label="Example automated test run">
+   <header>
+    <i></i><i></i><i></i>
+    <span>rifat@qa — test run</span>
+    <button id="replay">Run again</button>
+   </header>
+   <div class="tb" id="run"></div>
+  </div>
+ </div>
+
+</div>
+
+<section id="work">
+ <div class="wrap">
+  <h2 class="t rv">My QA Projects</h2>
+  <p class="sub rv">A few projects I've worked on to make testing easier and faster. Click a project to see more.</p>
+  <div class="rows rv" id="rows"></div>
+ </div>
+</section>
+
+<section id="experience">
+ <div class="wrap">
+  <h2 class="t rv">My Experience</h2>
+  <p class="sub rv">My experience includes web applications, CRM features, and calling systems, using both manual testing and automation.</p>
+
+  <div class="tl" id="tl">
+   <i class="fill"></i>
+
+   <div class="job">
+    <div class="d">April 2025 – Present</div>
+    <h3>Junior SQA Engineer, Shikho Technologies <span class="badge">Current</span></h3>
+    <ul>
+     <li>Test CRM features and write test cases for new updates.</li>
+     <li>Test inbound, outbound, autodial, and IVR calling features using WebRTC and Asterisk.</li>
+     <li>Help 350+ sales agents understand new features and collect their feedback.</li>
+    </ul>
+   </div>
+
+   <div class="job">
+    <div class="d">Jan 2025 – April 2025</div>
+    <h3>SQA Intern, Shikho Technologies</h3>
+    <ul>
+     <li>Tested CMS, CRM, and mobile app features.</li>
+     <li>Wrote test cases, found bugs, and reported issues to developers.</li>
+     <li>Learned and worked with test automation.</li>
+    </ul>
+   </div>
+
+   <div class="job">
+    <div class="d">May 2024 – Aug 2024</div>
+    <h3>SQA Intern, Softcell Solution</h3>
+    <ul>
+     <li>Tested a PHP and Laravel web application with guidance from senior QA team members.</li>
+     <li>Reported bugs and shared testing updates with the team.</li>
+    </ul>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="skills">
+ <div class="wrap">
+  <h2 class="t rv">Skills and Tools</h2>
+  <p class="sub rv">Tools and technologies I use for testing, automation, and development.</p>
+
+  <div class="tabs rv" id="tabs" role="tablist"></div>
+  <div class="pool" id="pool" aria-live="polite"></div>
+
+  <div class="two rv">
+   <div class="edu">
+    <h3>Education</h3>
+    <p>
+     B.Sc. in Computer Science and Engineering
+     <small>Green University of Bangladesh · CGPA 3.28 / 4.00</small>
+    </p>
+    <p>
+     Higher Secondary Certificate
+     <small>Kurigram Govt. College · GPA 4.50 / 5.00</small>
+    </p>
+   </div>
+
+   <div class="edu">
+    <h3>Research and Courses</h3>
+    <p>
+     Alzheimer's Disease Classification
+     <small>Undergraduate thesis using a neural network approach.</small>
+    </p>
+    <p>
+     Ostad Courses
+     <small>Web Development with PHP and Laravel · SQA: Manual and Automated Testing</small>
+    </p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="contact" style="border:0;padding-bottom:0">
+ <div class="wrap">
+  <div class="contact rv">
+   <h2>Let's work together.</h2>
+   <p>I'm open to opportunities in software quality assurance and test automation. Feel free to email or call me.</p>
+
+   <div class="cta">
+    <a class="btn s" data-mag href="https://wa.me/8801403147498?text=Hi%20Rifat%2C%20I%20contacted%20you%20through%20your%20portfolio." target="_blank" rel="noopener">WhatsApp me</a>
+    <a class="btn s" data-mag href="https://www.linkedin.com/in/arif-hasanq12/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn s" data-mag href="https://github.com/NotToday0007" target="_blank" rel="noopener">GitHub</a>
+   </div>
+
+   <div class="contact-details">
+    <div class="mail-line">
+     <a target="_blank" rel="noopener"
+        href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=rifatkhan.khan01@gmail.com&amp;su=Job%20Opportunity%20-%20SQA%20Engineer">
+      <span>✉</span>rifatkhan.khan01@gmail.com
+     </a>
+     <button class="copy-btn" id="copy" type="button">Copy</button>
+    </div>
+
+    <a href="tel:+8801403147498"><span>☎</span>01403147498</a>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>© 2026 Md. Arif Hasan Rifat. All rights reserved.</footer>
+<div id="toast" role="status" aria-live="polite">Email copied</div>
+
+<script>
+const $=s=>document.querySelector(s);
+const $$=s=>[...document.querySelectorAll(s)];
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+/* Terminal animation */
+let timers=[];
+
+function play(el,lines,gap=450){
+ timers.filter(t=>t.el===el).forEach(t=>clearTimeout(t.id));
+ timers=timers.filter(t=>t.el!==el);
+ el.innerHTML='';
+
+ lines.forEach((l,i)=>{
+  const id=setTimeout(()=>{
+   el.querySelector('.cur')?.classList.remove('cur');
+
+   const d=document.createElement('div');
+   d.className='ln'+(l.sum?' sum':'');
+
+   d.innerHTML=l.sum
+    ?`<span>Result</span><span class="ok">${l.sum}</span>`
+    :l.cmd
+    ?`<span class="dim">${l.cmd}</span>`
+    :`<span class="ok">✓ ${l.t}</span><span class="dim">${l.ms}</span>`;
+
+   if(i===lines.length-1&&!l.sum)d.classList.add('cur');
+   el.appendChild(d);
+  },reduce?0:i*gap+250);
+
+  timers.push({el,id});
+ });
+}
+
+const mainLines=[
+ {cmd:'$ npm run regression'},
+ {t:'login and access checks',ms:'12ms'},
+ {t:'lead assignment',ms:'48ms'},
+ {t:'inbound call flow',ms:'210ms'},
+ {t:'autodial queue',ms:'180ms'},
+ {t:'IVR menu routing',ms:'95ms'},
+ {t:'dashboard reports',ms:'64ms'},
+ {sum:'6 checks passed · 0 failed'}
+];
+
+let loopId;
+
+function runMain(){
+ clearTimeout(loopId);
+ play($('#run'),mainLines);
+
+ if(!reduce){
+  // wait for all lines to finish + 2.5s pause, then run again
+  loopId=setTimeout(runMain, mainLines.length*450+250+1000);
+ }
+}
+
+runMain();
+$('#replay').onclick=runMain;
+
+/* Projects */
+const P=[
+ {
+  n:70,s:'%',l:'less regression time',
+  h:'Calling System Testing',
+  p:'Tested inbound, outbound, and autodial features. Also worked on load testing with 350+ agents and automated call-flow checks.',
+  tg:['WebRTC','Asterisk','Load testing'],
+  cmd:'npm run calls',
+  log:[
+   ['Inbound call connects','180ms'],
+   ['Outbound dial and answer','240ms'],
+   ['Autodial selects next lead','150ms'],
+   ['Load test with 350+ agents','stable']
+  ]
+ },
+ {
+  n:60,s:'%',l:'less setup time',
+  h:'Test Data Generator',
+  p:'Built scripts to create leads, users, dashboards, events, and templates so the team can start testing without preparing everything manually.',
+  tg:['Playwright','API scripts'],
+  cmd:'node seed.js',
+  log:[
+   ['Lead test data created','120 rows'],
+   ['Users and roles created','8 users'],
+   ['Events and templates created','done']
+  ]
+ },
+ {
+  n:50,s:'%',l:'less regression time',
+  h:'Playwright Test Automation',
+  p:'Automated CRM UI checks to reduce repetitive manual testing and catch issues during regression testing.',
+  tg:['Playwright','JavaScript'],
+  cmd:'npx playwright test',
+  log:[
+   ['Lead list filters','1.1s'],
+   ['Lead status update','0.9s'],
+   ['Dashboard widgets load','1.4s']
+  ]
+ },
+ {
+  n:50,s:'%',l:'less writing time',
+  h:'AI Test Case Generator',
+  p:'Created a tool that reads a PRD from ClickUp and drafts test cases through a Discord command.',
+  tg:['Discord','ClickUp API','AI'],
+  cmd:'/generate-testcases PRD-24',
+  log:[
+   ['PRD fetched from ClickUp','0.6s'],
+   ['Test cases drafted','4.2s'],
+   ['Cases sent to ClickUp','0.8s']
+  ]
+ },
+ {
+  n:1,s:' step',l:'from bug to ticket',
+  h:'AI Bug Reporter',
+  p:'Built a workflow that turns a Discord message into a ClickUp bug report with a title, reproduction steps, and screenshots.',
+  tg:['Discord','ClickUp'],
+  cmd:'/bug "autodial skips lead"',
+  log:[
+   ['Bug title and steps prepared','1.8s'],
+   ['Screenshots attached','0.5s'],
+   ['ClickUp ticket created','0.7s']
+  ]
+ },
+ {
+  n:100,s:'%',l:'API checks automated',
+  h:'API Test Automation',
+  p:'Used Postman collections and Newman to automate API checks, validate responses, and generate Allure reports.',
+  tg:['Postman','Newman','Allure'],
+  cmd:'newman run collection.json',
+  log:[
+   ['Status code checks','pass'],
+   ['Response schema checks','pass'],
+   ['Allure report generated','done']
+  ]
+ },
+ {
+  n:2,s:' jobs',l:'tested on schedule',
+  h:'RTP and DNP Job Testing',
+  p:'Prepared test data and used n8n and API scripts to test scheduled jobs and check their report output.',
+  tg:['n8n','API scripts'],
+  cmd:'n8n execute rtp-dnp',
+  log:[
+   ['Test data prepared','0.9s'],
+   ['Scheduled job triggered','1.2s'],
+   ['Report output checked','0.4s']
+  ]
+ }
+];
+
+const rows=$('#rows');
+
+P.forEach(x=>{
+ const r=document.createElement('div');
+ r.className='row';
+
+ r.innerHTML=`
+  <button aria-expanded="false">
+   <div class="n">
+    <span data-c="${x.n}">0</span>${x.s}
+    <small>${x.l}</small>
+   </div>
+   <div>
+    <h3>${x.h}</h3>
+    <p>${x.p}</p>
+    <div class="tags">${x.tg.map(t=>`<span>${t}</span>`).join('')}</div>
+   </div>
+   <div class="pl">+</div>
+  </button>
+  <div class="log">
+   <div>
+    <div class="term"><div class="tb"></div></div>
+   </div>
+  </div>
+ `;
+
+ r.querySelector('button').onclick=e=>{
+  const open=!r.classList.contains('open');
+
+  $$('.row.open').forEach(o=>{
+   o.classList.remove('open');
+   o.querySelector('button').setAttribute('aria-expanded','false');
+  });
+
+  if(open){
+   r.classList.add('open');
+   e.currentTarget.setAttribute('aria-expanded','true');
+
+   play(
+    r.querySelector('.tb'),
+    [
+     {cmd:'$ '+x.cmd},
+     ...x.log.map(a=>({t:a[0],ms:a[1]})),
+     {sum:'all checks passed'}
+    ],
+    380
+   );
+  }
+ };
+
+ rows.appendChild(r);
+});
+
+/* Number counters */
+function count(el){
+ const to=+el.dataset.c;
+
+ if(reduce||to<3){
+  el.textContent=to;
+  return;
+ }
+
+ let s=null;
+
+ const f=t=>{
+  s??=t;
+  const k=Math.min((t-s)/1100,1);
+  el.textContent=Math.round(to*(1-Math.pow(1-k,3)));
+  if(k<1)requestAnimationFrame(f);
+ };
+
+ requestAnimationFrame(f);
+}
+
+/* Reveal sections and counters */
+const io=new IntersectionObserver(es=>{
+ es.forEach(e=>{
+  if(e.isIntersecting){
+   e.target.classList.add('in');
+   e.target.querySelectorAll('[data-c]').forEach(count);
+   io.unobserve(e.target);
+  }
+ });
+},{threshold:.15});
+
+$$('.rv').forEach(e=>io.observe(e));
+
+/* Scroll progress and experience timeline */
+const jobs=$$('.job');
+const tl=$('#tl');
+
+function scroll(){
+ const h=document.documentElement;
+ const max=h.scrollHeight-h.clientHeight;
+
+ $('#bar').style.transform=
+  `scaleX(${max>0?h.scrollTop/max:0})`;
+
+ const r=tl.getBoundingClientRect();
+ const mid=innerHeight*.6;
+
+ tl.style.setProperty(
+  '--p',
+  Math.max(0,Math.min(100,(mid-r.top)/(r.height-30)*100))
+ );
+
+ jobs.forEach(j=>{
+  j.classList.toggle('on',j.getBoundingClientRect().top<mid);
+ });
+
+ const ids=['work','experience','skills','contact'];
+ let cur='';
+
+ ids.forEach(i=>{
+  if($('#'+i).getBoundingClientRect().top<innerHeight*.4){
+   cur=i;
+  }
+ });
+
+ $$('#links a').forEach(a=>{
+  a.classList.toggle('act',a.getAttribute('href')==='#'+cur);
+ });
+}
+
+addEventListener('scroll',scroll,{passive:true});
+scroll();
+
+/* Skills tabs */
+const S={
+ 'Testing':['Manual Testing','Functional Testing','Regression Testing','Smoke Testing','Sanity Testing','Test Cases','Test Scenarios','Bug Reporting'],
+ 'Automation':['Playwright','Appium','API Automation','Newman','n8n'],
+ 'API and Data':['Postman','REST API','SQL','MySQL'],
+ 'Performance':['JMeter','k6','Load Testing'],
+ 'Tools':['Jira','ClickUp','Git','GitHub','Allure Reports'],
+ 'Web':['JavaScript','PHP','Laravel','HTML','CSS','C/C++'],
+ 'Process':['SDLC','STLC','Agile/Scrum']
+};
+
+const tabs=$('#tabs');
+const pool=$('#pool');
+
+function show(k){
+ $$('#tabs button').forEach(b=>{
+  b.classList.toggle('on',b.textContent===k);
+  b.setAttribute('aria-selected',String(b.textContent===k));
+ });
+
+ pool.innerHTML=S[k]
+  .map((s,i)=>`<span style="animation-delay:${i*60}ms">${s}</span>`)
+  .join('');
+}
+
+Object.keys(S).forEach(k=>{
+ const b=document.createElement('button');
+ b.type='button';
+ b.textContent=k;
+ b.setAttribute('role','tab');
+ b.setAttribute('aria-selected','false');
+ b.onclick=()=>show(k);
+ tabs.appendChild(b);
+});
+
+show('Testing');
+
+/* Background spotlight */
+addEventListener('pointermove',e=>{
+ document.body.style.setProperty('--mx',e.clientX+'px');
+ document.body.style.setProperty('--my',e.clientY+'px');
+});
+
+/* Photo tilt and button movement */
+if(!reduce){
+ const ph=$('#photo');
+ const st=ph.parentNode;
+
+ st.addEventListener('pointermove',e=>{
+  const b=st.getBoundingClientRect();
+  const x=(e.clientX-b.left)/b.width-.5;
+  const y=(e.clientY-b.top)/b.height-.5;
+
+  ph.style.transform=
+   `rotateY(${x*12}deg) rotateX(${-y*12}deg)`;
+ });
+
+ st.addEventListener('pointerleave',()=>{
+  ph.style.transform='';
+ });
+
+ $$('[data-mag]').forEach(b=>{
+  b.addEventListener('pointermove',e=>{
+   const r=b.getBoundingClientRect();
+
+   b.style.transform=
+    `translate(${(e.clientX-r.left-r.width/2)*.2}px,${(e.clientY-r.top-r.height/2)*.3}px)`;
+  });
+
+  b.addEventListener('pointerleave',()=>{
+   b.style.transform='';
+  });
+ });
+}
+
+/* Theme toggle */
+const root=document.documentElement;
+
+const saved=(()=>{
+ try{return localStorage.getItem('theme')}
+ catch(e){return null}
+})();
+
+if(saved==='dark'||saved==='light'){
+ root.dataset.theme=saved;
+}
+
+$('#theme').onclick=()=>{
+ root.dataset.theme=
+  root.dataset.theme==='dark'?'light':'dark';
+
+ try{
+  localStorage.setItem('theme',root.dataset.theme);
+ }catch(e){}
+};
+
+/* Copy email */
+$('#copy').onclick=async()=>{
+ const email='rifatkhan.khan01@gmail.com';
+ const b=$('#copy');
+ const t=$('#toast');
+
+ try{
+  await navigator.clipboard.writeText(email);
+  t.textContent='Email copied!';
+  b.textContent='Copied ✓';
+ }catch(e){
+  t.textContent=email;
+ }
+
+ t.classList.add('show');
+
+ setTimeout(()=>{
+  t.classList.remove('show');
+  b.textContent='Copy';
+ },1800);
+};
+</script>
+</body>
+</html>
